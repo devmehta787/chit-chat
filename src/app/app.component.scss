@@ -1,0 +1,27 @@
+#backgroundHeader{
+    width: 100%;
+    height: 20vh;
+    background-color: #20262E;
+}
+
+#backgroundBody{
+    width: 100%;
+    height: 80vh;
+    background-color: #E9E8E8;
+}
+
+#chatContainer{
+    position: fixed;
+    top: 0 ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+    height: 90%;
+    background-color: #E9E8E8;
+    border-radius: 3px;
+    box-shadow: -1px -1px 10px #20262E;
+
+}
+
