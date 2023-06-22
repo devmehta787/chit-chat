@@ -1,87 +1,34 @@
-#backgroundHeader{
-    width: 100%;
-    height: 20vh;
-    background-color: #20262E;
+#backgroundHeader {
+  width: 100%;
+  height: 20vh;
+  background-color: #321e1e;
 }
 
-#backgroundBody{
-    width: 100%;
-    height: 80vh;
-    background-color: #E9E8E8;
+#backgroundBody {
+  width: 100%;
+  height: 80vh;
+  background-color: #eeeeee;
 }
 
-#chatContainer{
-    position: fixed;
-    top: 0 ;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 70%;
-    height: 90%;
-    background-color: #E9E8E8;
-    border-radius: 3px;
-    box-shadow: -1px -1px 10px #20262E;
-    flex-direction: row;
-    display: flex;
-    overflow: hidden;
-    #sidebar{
-        border-right: 2px solid #20262E;
-        width: 30%;
-        display: flex;
-        flex-direction: column;
+#chatContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 70%;
+  height: 90%;
+  background-color: #eeeeee;
+  border-radius: 3px;
+  box-shadow: -1px -1px 10px #482121;
+  flex-direction: row;
+  display: flex;
+  overflow: hidden;
 
-        #sidebarHeader{
-            width: 100%;
-            height: 40px;
-            background-color: #393E46;
-            border-radius: 3px 3px 0px 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        #searchChat{
-            flex-basis:50px;
-            border-top: 0.5px solid white;
-            background-color: #393E46;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 2px solid #20262E;
-            
-            input{
-                width:calc(90% - 60px);
-                border:none;
-                height: 60%;
-                background-color: #393E46;
-                color: whitesmoke;
-                padding-left: 15px;
-                outline: none;
-
-                ::placeholder{
-                    color: whitesmoke;
-                }
-
-
-
-            }
-        }
-        #noConversation{
-            padding-top: 20px;
-            text-align: center;
-            color:black;
-            font-size: 15px;
-            font-family: sans-serif;
-
-
-        }
-
-    }
+  app-sidebar {
+    flex-basis: 30%;
+    display: block;
+    height: 100%;
+  }
 }
-
-
-
-
-
