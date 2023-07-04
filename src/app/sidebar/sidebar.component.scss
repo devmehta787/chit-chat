@@ -69,6 +69,56 @@
     text-align: center;
     color: black;
     font-size: 15px;
-    font-family: sans-serif;
+  }
+
+  #sidebarContent {
+    padding-right: 5px;
+    #conversation {
+      width: 100%;
+      //   height: 60px;
+      display: flex;
+
+      &:hover {
+        background-color: white;
+        cursor: pointer;
+      }
+
+      #picture {
+        padding-top: 10px;
+        padding-left: 10px;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 70px;
+        img {
+          width: 40px;
+          //   height: 40px;
+          border-radius: 50%;
+        }
+      }
+      #content {
+        height: 100%;
+        border-bottom: 1px solid black;
+        flex-grow: 1;
+        margin-top: 15px;
+
+        #conversationHeader {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding-right: 10px;
+          padding-top: 5px;
+
+          .name {
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+        .message {
+          font-size: 12px;
+          padding-top: 7px;
+          color: brown;
+        }
+      }
+    }
   }
 }
