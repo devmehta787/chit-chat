@@ -38,6 +38,7 @@
   }
   #searchChat {
     flex-basis: 50px;
+    height: 250px;
     border-top: 0.5px solid #eeeeee;
     background-color: #47a992;
     color: #eeeeee;
@@ -47,12 +48,12 @@
     border-bottom: 2px solid #47a992;
     img {
       position: absolute;
-      left: 30px;
+      left: 150px;
     }
     input {
       width: calc(90% - 60px);
       border: none;
-      height: 60%;
+      height: 80%;
       background-color: #8bacaa;
       color: #eeeeee;
       padding-left: 40px;

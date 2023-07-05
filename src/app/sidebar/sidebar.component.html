@@ -20,23 +20,25 @@
 
   <!-- chat list section -->
   <div id="sidebarContent">
-    <!-- <div id="noConversation">
-      <p>no conversation</p>
-    </div> -->
+    <!-- <div id="noConversation"><p>no conversation</p></div> -->
 
-    <!-- <div id="conversation" *ngFor="let conversation of conversations">
+    <div
+      id="conversation"
+      *ngFor="let conversation of conversations"
+      (click)="conversationClicked.emit(conversation)"
+    >
       <div id="picture"><img src="../assets/images/avatar.svg" /></div>
       <div id="content">
         <div id="conversationHeader">
-          <div class="name">{conversation.name}</div>
-          <div class="time">{conversation.time}</div>
+          <div class="name">{{ conversation.name }}</div>
+          <div class="time">{{ conversation.time }}</div>
         </div>
 
-        <div class="message">{conversation.message}</div>
+        <div class="message">{{ conversation.message }}</div>
       </div>
-    </div> -->
+    </div>
 
-    <div id="conversation">
+    <!-- <div id="conversation">
       <div id="picture"><img src="../assets/images/avatar.svg" /></div>
       <div id="content">
         <div id="conversationHeader">
@@ -57,7 +59,7 @@
         </div>
 
         <div class="message">jabba jabba</div>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
   </div>
 </div>

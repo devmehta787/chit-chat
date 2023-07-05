@@ -4,12 +4,20 @@
 <!-- 2 sections users list and chat section -->
 <div id="chatContainer">
   <!-- sidebar section -->
+  <!-- <app-sidebar
+    (conversationClicked)="onConversationSelected($event)"
+  ></app-sidebar> -->
+
   <app-sidebar></app-sidebar>
 
   <!-- chat section -->
-  <div id="chat">
-    <p>this is chat</p>
-  </div>
+
+  <!-- <div id="chat"> -->
+  <!-- <div id="chatPlaceholder" *ngIf="!conversation"></div> -->
+  <!-- <p>this is chat</p> -->
+  <!-- </div> -->
+
+  <app-chat></app-chat>
 </div>
 
 <router-outlet></router-outlet>
