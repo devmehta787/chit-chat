@@ -1,9 +1,10 @@
 #sidebar {
   border-right: 0.5px solid #482121;
-  width: 100%;
-  height: 100%;
+  //   width: 35%;
+  //   height: 100%;
   display: flex;
   flex-direction: column;
+  //   flex: 0.3;
 
   #sidebarHeader {
     width: 100%;
