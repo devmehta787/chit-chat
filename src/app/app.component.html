@@ -1,24 +1,28 @@
-<!-- <div id="backgroundHeader"></div>
-<div id="bakgroundBody"></div> -->
+<div id="background_header"></div>
+<div id="background_body"></div>
 
-<!-- 2 sections users list and chat section -->
-<!-- <div id="chatContainer"> -->
-<!-- sidebar section -->
-<!-- <app-sidebar
+<div id="chatContainer">
+  <!-- <app-login></app-login> -->
+  <app-sidebar
     (conversationClicked)="onConversationSelected($event)"
-  ></app-sidebar> -->
-<div class="sidebar">
-  <app-sidebar></app-sidebar>
+  ></app-sidebar>
+  <div id="chat">
+    <div id="chatPlaceholder">
+      <div id="chatPlaceholder" *ngIf="!conversation"></div>
+      <img width="400" src="../assets/images/phoneIcon.png" />
+      <h2>Keep your phone connected</h2>
+      <p>
+        WhatsApp connects your phone to sync messages. To reduce data<br />
+        usage, connect to your phone to Wi-Fi.
+      </p>
+      <div class="seperator"></div>
 
-  <!-- chat section -->
+      <p>WhatsApp is available for PC. <a href="#">Get it here</a></p>
+    </div>
+    <!-- <app-chat [conversation]="conversation" *ngIf="conversation"></app-chat> -->
+    <!-- <app-chat></app-chat> -->
+    <!-- </div> -->
+  </div>
 
-  <!-- <div id="chat"> -->
-  <!-- <div id="chatPlaceholder" *ngIf="!conversation"></div> -->
-  <!-- <p>this is chat</p> -->
-  <!-- </div> -->
-
-  <app-chat></app-chat>
+  <router-outlet></router-outlet>
 </div>
-<!-- </div> -->
-
-<router-outlet></router-outlet>

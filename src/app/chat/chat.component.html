@@ -1,43 +1,52 @@
 <div id="container">
   <div id="header">
-    <div id="conversation">
-      <div id="picture"><img src="../assets/images/avatar.svg" /></div>
-      <div id="content">
-        <div id="conversationHeader">
-          <div class="name">Abc Def</div>
-          <div class="status">typing ....</div>
-        </div>
+    <div class="avatarSection">
+      <div class="picture">
+        <img src="../../assets/images/noPic.svg" />
       </div>
+
+      <div class="nameSection">Dev</div>
+    </div>
+    <div class="actionButtons">
+      <img src="../../assets/images/attached.svg" />
+      <img src="../../assets/images/moreVertIcon.svg" />
     </div>
   </div>
-
   <div id="body">
-    <div class="chat-messages">
-      <div class="message">
-        <span>Hi there!</span>
-      </div>
-      <div class="message-sent">
-        <span>How are you?</span>
-      </div>
-
-      <div class="message">
-        <span>what are you up to?</span>
-      </div>
-      <div class="message">
-        <span>Lorem Ipsum!</span>
-      </div>
-      <div class="message-sent">
-        <span>I am good</span>
-      </div>
-      <div class="message-sent">
-        <span>How are you?</span>
+    <div
+      class="message"
+      [ngClass]="{ me: message.me }"
+      *ngFor="let message of conversation.messages"
+    >
+      <div class="messageContent">
+        {{ message.body }}
+        <div class="time">{{ message.time }}</div>
       </div>
     </div>
   </div>
-
   <div id="footer">
-    <div class="chat-input">
-      <input type="text" placeholder="Type your message..." />
+    <div id="smileyIcon">
+      <img
+        (click)="emojiPickerVisible = !emojiPickerVisible"
+        src="../../assets/images/smileIcon.svg"
+      />
+      <emoji-mart
+        (emojiClick)="emojiClicked($event)"
+        *ngIf="emojiPickerVisible"
+        style="position: absolute; bottom: 50px"
+        [darkMode]="false"
+        title="Pick your emoji…"
+        emoji="point_up"
+      ></emoji-mart>
+    </div>
+    <div id="textarea">
+      <textarea
+        [(ngModel)]="message"
+        (keyup.enter)="submitMessage($event)"
+      ></textarea>
+    </div>
+    <div id="micIcon">
+      <img src="../../assets/images/voiceIcon.svg" />
     </div>
   </div>
 </div>

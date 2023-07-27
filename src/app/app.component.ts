@@ -9,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   title = 'chit-chat';
 
-  // conversation;
+  conversation: any;
 
-  // onConversationSelected(conversation) {
-  //   this.conversation = conversation;
-  // }
+  onConversationSelected(conversation: any) {
+    this.conversation = conversation;
+  }
 }
