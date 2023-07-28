@@ -19,4 +19,27 @@ export class AuthService {
         console.log(response);
       });
   }
+
+  getChats(chat: { sender_id: BigInteger }) {
+    this.http
+      .get(`https://localhost:8080/user/getChats/${chat.sender_id}`, {
+        withCredentials: false,
+      })
+      .subscribe((response) => {
+        console.log(response);
+      });
+  }
+
+  getChat(chat: { sender_id: BigInteger; receiver_id: BigInteger }) {
+    this.http
+      .get(
+        `https://localhost:8080/user/getChat/${chat.sender_id}/${chat.receiver_id}`,
+        {
+          withCredentials: false,
+        }
+      )
+      .subscribe((response) => {
+        console.log(response);
+      });
+  }
 }
