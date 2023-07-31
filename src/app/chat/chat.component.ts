@@ -26,7 +26,7 @@ export class ChatComponent implements OnInit {
     return true;
   }
 
-  emojiClicked(event: { emoji: { native: string } }) {
-    this.message += event.emoji.native;
-  }
+  // emojiClicked(event: { emoji: { native: string } }) {
+  //   this.message += event.emoji.native;
+  // }
 }

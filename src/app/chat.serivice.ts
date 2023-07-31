@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './user.model';
+import { map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ChatService {
@@ -21,13 +22,21 @@ export class ChatService {
   }
 
   getChats(chat: { sender_id: BigInteger }) {
+    console.log(chat.sender_id);
     this.http
-      .get(`https://localhost:8080/user/getChats/${chat.sender_id}`, {
-        withCredentials: false,
-      })
-      .subscribe((response) => {
-        console.log(response);
-      });
+      .get(`https://localhost:8080/user/getChats/${chat.sender_id}`)
+      .pipe(
+        map((responseData) => {
+          const friendsArray: any[] = [];
+          for (const key in responseData) {
+            if (responseData) {
+              friendsArray.push(responseData);
+            }
+          }
+          var friend = Object.values(friendsArray['0']);
+          return friend;
+        })
+      );
   }
 
   getChat(chat: { sender_id: BigInteger; receiver_id: BigInteger }) {
