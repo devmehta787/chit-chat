@@ -4,6 +4,7 @@ import { User } from './user.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  // user_id: User["id"];
   constructor(private http: HttpClient) {}
 
   addNewUser(user: {

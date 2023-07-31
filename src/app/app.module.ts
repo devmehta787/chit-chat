@@ -12,9 +12,16 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, ChatComponent, LoginComponent, SignUpComponent],
+  declarations: [
+    AppComponent,
+    SidebarComponent,
+    ChatComponent,
+    LoginComponent,
+    SignUpComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     PickerModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

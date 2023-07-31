@@ -1,4 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { ChatService } from '../chat.serivice';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sidebar',
@@ -192,7 +195,22 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  constructor() {}
+  constructor(
+    // private AuthSerivce: AuthService,
+    // private ChatService: ChatService,
+    private http: HttpClient
+  ) {}
+  public getJsonValue: any;
+  public data: any;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getChat();
+  }
+
+  public getChat() {
+    return this.http
+      .get('http://localhost:8080/user/getChat/2/3')
+      .subscribe((data) => console.log(data));
+    // this.getJsonValue = this.data;
+  }
 }
