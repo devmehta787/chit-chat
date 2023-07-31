@@ -15,12 +15,12 @@ export class ChatComponent implements OnInit {
 
   submitMessage(event: any) {
     let value = event.target.value.trim();
-    this.message = '';
+    event.target.value = '';
     if (value.length < 1) return false;
-    this.conversation.messages.unshift({
+    this.conversation.messages.push({
       id: 1,
       body: value,
-      time: '11:00',
+      time: '8:22',
       me: true,
     });
     return true;

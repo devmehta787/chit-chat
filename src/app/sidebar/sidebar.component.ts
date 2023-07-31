@@ -15,21 +15,21 @@ export class SidebarComponent implements OnInit {
       latestMessage: 'Hi there!!',
       latestMessageRead: false,
       messages: [
-        { id: 1, body: 'Hello world', time: '8:21', me: true },
+        { id: 1, body: 'Hey world', time: '8:21', me: true },
         { id: 2, body: 'How are you?', time: '8:21', me: false },
         { id: 3, body: 'I am fine thanks', time: '8:21', me: true },
-        { id: 4, body: 'Glad to hear that', time: '8:21', me: false },
+        { id: 4, body: 'Good talking to you!!!!', time: '8:21', me: false },
       ],
     },
     {
-      name: 'Dev',
+      name: 'Def',
       time: '8:21',
       latestMessage: 'wow',
       latestMessageRead: true,
       messages: [
         { id: 1, body: 'Hello world', time: '8:21', me: true },
         { id: 2, body: 'How are you?', time: '8:21', me: false },
-        { id: 3, body: 'I am fine thanks', time: '8:21', me: true },
+        { id: 3, body: 'noice', time: '8:21', me: true },
         { id: 4, body: 'Glad to hear that', time: '8:21', me: false },
       ],
     },
@@ -39,10 +39,10 @@ export class SidebarComponent implements OnInit {
       latestMessage: 'I am fine',
       latestMessageRead: false,
       messages: [
-        { id: 1, body: 'Hello world', time: '8:21', me: true },
+        { id: 1, body: 'Hiiiii', time: '8:21', me: true },
         { id: 2, body: 'How are you?', time: '8:21', me: false },
-        { id: 3, body: 'I am fine thanks', time: '8:21', me: true },
-        { id: 4, body: 'Glad to hear that', time: '8:21', me: false },
+        { id: 3, body: 'I am fine', time: '8:21', me: true },
+        { id: 4, body: 'Great', time: '8:21', me: false },
       ],
     },
     {
@@ -51,7 +51,7 @@ export class SidebarComponent implements OnInit {
       latestMessage: 'lol',
       latestMessageRead: true,
       messages: [
-        { id: 1, body: 'Hello world', time: '8:21', me: true },
+        { id: 1, body: 'Hola world', time: '8:21', me: true },
         { id: 2, body: 'How are you?', time: '8:21', me: false },
         { id: 3, body: 'I am fine thanks', time: '8:21', me: true },
         { id: 4, body: 'Glad to hear that', time: '8:21', me: false },
