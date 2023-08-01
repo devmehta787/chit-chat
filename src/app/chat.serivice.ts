@@ -7,48 +7,28 @@ import { map } from 'rxjs';
 export class ChatService {
   constructor(private http: HttpClient) {}
 
-  startChat(chat: {
-    sender_id: BigInteger;
-    receiver_id: BigInteger;
-    message_content: string;
-  }) {
-    this.http
-      .post('https://localhost:8080/user/startChat', chat, {
+  startChat(sender_id: BigInt, receiver_id: BigInt, message_content: string) {
+    const chat = {
+      sender_id: sender_id,
+      receiver_id: receiver_id,
+      message_content: message_content,
+    };
+    return this.http
+      .post('http://localhost:8080/user/startChat', chat, {
         withCredentials: false,
       })
-      .subscribe((response) => {
-        console.log(response);
+      .subscribe((data) => {
+        console.log(data);
       });
   }
 
-  getChats(chat: { sender_id: BigInteger }) {
-    console.log(chat.sender_id);
-    this.http
-      .get(`https://localhost:8080/user/getChats/${chat.sender_id}`)
-      .pipe(
-        map((responseData) => {
-          const friendsArray: any[] = [];
-          for (const key in responseData) {
-            if (responseData) {
-              friendsArray.push(responseData);
-            }
-          }
-          var friend = Object.values(friendsArray['0']);
-          return friend;
-        })
-      );
+  getChats(sender_id: any) {
+    return this.http.get(`http://localhost:8080/user/getChats/${sender_id}`);
   }
 
-  getChat(chat: { sender_id: BigInteger; receiver_id: BigInteger }) {
-    this.http
-      .get(
-        `https://localhost:8080/user/getChat/${chat.sender_id}/${chat.receiver_id}`,
-        {
-          withCredentials: false,
-        }
-      )
-      .subscribe((response) => {
-        console.log(response);
-      });
+  getChat(sender_id: any, receiver_id: any) {
+    return this.http.get(
+      `http://localhost:8080/user/getChat/${sender_id}/${receiver_id}`
+    );
   }
 }

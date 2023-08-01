@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ChatService } from '../chat.serivice';
 import { HttpClient } from '@angular/common/http';
+import { chat } from '../chat.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -197,20 +198,20 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     // private AuthSerivce: AuthService,
-    // private ChatService: ChatService,
+    private ChatService: ChatService,
     private http: HttpClient
   ) {}
   public getJsonValue: any;
-  public data: any;
 
+  chats: chat[] = [];
   ngOnInit(): void {
-    this.getChat();
+    this.fetchChats(2);
   }
 
-  public getChat() {
-    return this.http
-      .get('http://localhost:8080/user/getChat/2/3')
-      .subscribe((data) => console.log(data));
-    // this.getJsonValue = this.data;
+  fetchChats(sender_id: any) {
+    this.ChatService.getChat(sender_id, 3).subscribe((data: any) => {
+      this.chats = data;
+      console.log(this.chats);
+    });
   }
 }

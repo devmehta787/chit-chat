@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChatService } from '../chat.serivice';
+import { chat } from '../chat.model';
 
 @Component({
   selector: 'app-chat',
@@ -10,7 +12,10 @@ export class ChatComponent implements OnInit {
   @Output() onSubmit: EventEmitter<any> = new EventEmitter();
   emojiPickerVisible: any;
   message = '';
-  constructor() {}
+  // chatService: ChatService | undefined;
+  chats: chat[] = [];
+
+  constructor(private ChatService: ChatService) {}
   ngOnInit(): void {}
 
   submitMessage(event: any) {
@@ -23,7 +28,13 @@ export class ChatComponent implements OnInit {
       time: '8:22',
       me: true,
     });
+    this.pushChat(2, 3, value);
+
     return true;
+  }
+  pushChat(sender_id: any, receiver_id: any, message_content: string) {
+    console.log(sender_id, receiver_id, message_content);
+    this.ChatService.startChat(sender_id, receiver_id, message_content);
   }
 
   // emojiClicked(event: { emoji: { native: string } }) {
