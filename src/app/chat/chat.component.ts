@@ -17,9 +17,12 @@ export class ChatComponent implements OnInit {
   // chatService: ChatService | undefined;
   chats: chat[] = [];
   userData: any = localStorage.getItem('user');
+  timer: any;
   constructor(private ChatService: ChatService) {}
   ngOnInit(): void {
-    this.fetchChat();
+    this.timer = setInterval(() => {
+      this.fetchChat();
+    }, 1000);
   }
   fetchChat() {
     // this.ChatService.getChat().pipe()

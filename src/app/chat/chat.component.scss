@@ -49,7 +49,9 @@
     flex-direction: column;
     // flex-direction: column-reverse;
     padding: 20px 50px;
-    overflow: scroll;
+    overflow-y: auto;
+    height: 100%;
+    position: relative;
     .message {
       margin-top: 10px;
       display: flex;
