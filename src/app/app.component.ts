@@ -15,7 +15,13 @@ export class AppComponent {
   //     console.log(msg);
   //   });
   // }
-  title = 'chit-chat';
+  islogin: boolean = false;
+  constructor() {
+    localStorage.getItem('user')
+      ? (this.islogin = true)
+      : (this.islogin = false);
+  }
+  title: string = 'chit-chat';
 
   conversation: any;
 

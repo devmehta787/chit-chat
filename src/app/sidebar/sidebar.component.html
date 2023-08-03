@@ -16,7 +16,7 @@
       <img width="19" src="../../assets/images/searchIcon.svg" />
       <input
         [ngModel]="searchText"
-        type="text"
+        (keyup.enter)="submitUser($event)"
         placeholder="Search or start the new chat"
       />
     </div>
@@ -25,9 +25,7 @@
   <div id="sidebarContent">
     <div
       class="conversation"
-      *ngFor="
-        let conversation of !searchText ? conversations : filteredConversations
-      "
+      *ngFor="let conversation of conversations"
       (click)="conversationClicked.emit(conversation)"
     >
       <div class="picture">
@@ -35,20 +33,21 @@
       </div>
       <div class="content">
         <div class="conversationHeader">
-          <div class="name">{{ conversation.name }}</div>
-          <div class="time">{{ conversation.time }}</div>
+          <div class="name">{{ conversation.username }}</div>
+          <!-- <div class="time">{{ contactList.time }}</div> -->
+          <div class="time">8:21</div>
         </div>
         <div class="message">
           <img
-            *ngIf="!conversation.latestMessageRead"
+            *ngIf="!conversation.phone"
             src="../../assets/images/doubleTick.svg"
           />
 
           <img
-            *ngIf="conversation.latestMessageRead"
+            *ngIf="conversation.phone"
             src="../../assets/images/doubleTickBlue.svg"
           />
-          {{ conversation.messages[3].body }}
+          <!-- {{ conversation.messages[3].body }} -->
         </div>
       </div>
     </div>

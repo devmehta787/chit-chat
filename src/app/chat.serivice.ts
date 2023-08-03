@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './user.model';
 import { map } from 'rxjs';
+import { chat } from './chat.model';
 
 @Injectable({ providedIn: 'root' })
 export class ChatService {
@@ -22,12 +23,12 @@ export class ChatService {
       });
   }
 
-  getChats(sender_id: any) {
-    return this.http.get(`http://localhost:8080/user/getChats/${sender_id}`);
-  }
+  // getChats(sender_id: any) {
+  //   return this.http.get(`http://localhost:8080/user/getChats/${sender_id}`);
+  // }
 
   getChat(sender_id: any, receiver_id: any) {
-    return this.http.get(
+    return this.http.get<chat[]>(
       `http://localhost:8080/user/getChat/${sender_id}/${receiver_id}`
     );
   }

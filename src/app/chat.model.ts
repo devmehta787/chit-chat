@@ -1,6 +1,6 @@
 export interface chat {
-  id?: BigInteger;
-  sender_id: BigInteger;
-  receiver_id: BigInteger;
+  message_id?: number;
+  sender_id: number;
+  receiver_id: number;
   message_content: string;
 }
